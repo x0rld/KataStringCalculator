@@ -11,7 +11,7 @@ public class StringCalculate
             return 0;
         }
         
-        return input.Split(",").Sum(int.Parse);
+        return input.Split(',', '\n').Sum(int.Parse);
     }
 
     private static bool IsBlank(string input)

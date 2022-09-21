@@ -25,4 +25,13 @@ public class StringCalculateTest
         Check.That(actual).Equals(expected);
     }
 
+    [Theory]
+    [InlineData("3\n4", 7)]
+    [InlineData("3,4\n3", 10)]
+    public void any_number_either_comma_or_newline_separator_returns_sum_of_numbers(string input, int expected)
+    {        
+        var actual = StringCalculate.Add(input);
+        Check.That(actual).Equals(expected);
+    }
+
 }

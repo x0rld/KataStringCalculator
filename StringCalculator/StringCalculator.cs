@@ -34,4 +34,11 @@ public class StringCalculateTest
         Check.That(actual).Equals(expected);
     }
 
+    [Theory]
+    [InlineData("//;\n1;2", 3)]
+    public void any_number_with_custom_separator_returns_sum_of_numbers(string input, int expected)
+    {
+        var actual = StringCalculate.Add(input);
+        Check.That(actual).Equals(expected);
+    }
 }

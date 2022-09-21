@@ -3,7 +3,7 @@ using Xunit;
 
 namespace StringCalculator;
 
-public class StringCalculator
+public class StringCalculateTest
 {
     [Theory]
     [InlineData("4",4)]
@@ -20,6 +20,14 @@ public class StringCalculator
         var actual = StringCalculate.Add("1,2");
 
         Check.That(actual).Equals(3);
+    }
+
+    [Fact]
+    public void todo()
+    {
+        var actual = StringCalculate.Add("3,4");
+
+        Check.That(actual).Equals(7);
     }
 
 }

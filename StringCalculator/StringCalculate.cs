@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace StringCalculator;
 
@@ -10,10 +12,12 @@ public class StringCalculate
         {
             return 0;
         }
-
-        if (input == "//;\n1;2")
+        
+        const string separatorDeclarator = "//";
+        if (input.StartsWith(separatorDeclarator))
         {
-            return 3;
+            var separatorSubstring = input.Substring(2, 1);
+            return   input.Substring(4).Split(separatorSubstring, '\n').Sum(int.Parse);
         }
         return input.Split(',', '\n').Sum(int.Parse);
     }
